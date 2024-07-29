@@ -16,10 +16,24 @@
         const cdv = document.getElementById('cdv')
         let kod = ''
         let x = 0
-        for(let i = 1; i<= 7; i++){
+        for(let i = 1; i<= 4; i++){
             kod += '<tr>'
-                for(let j = 1; j <=7; j++){
-                kod += i <= j && i + j <= 8 || i >= j && i + j >= 8? `<td>${j}</td>` : `<td></td>`
+                for(let j = 1; j <=4; j++){
+                    kod += i <= j? `<td>${j-x}</td>` : `<td></td>`
+                }
+                for(let j = 3; j >=1; j--){
+                    kod += i <= j ? `<td>${j-x}</td>` : `<td></td>`
+                }
+                x++
+                kod += '</tr>'
+            }
+        for(let i = 1; i<= 3; i++){
+            kod += '<tr>'
+                for(let j = 1; j <=4; j++){
+                    kod += i + j >= 4? `<td>${i+j-3}</td>` : `<td></td>`
+                }
+                for(let j = 3; j >=1; j--){
+                    kod += i + j >= 4 ? `<td>${i+j-3}</td>` : `<td></td>`
                 }
                 kod += '</tr>'
             }
